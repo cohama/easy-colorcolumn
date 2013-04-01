@@ -26,8 +26,8 @@ function! s:toggle_colorcolumn(col)
 endfunction
 
 function! s:get_visual_range()
-  let vstart = col("'<")
-  let vend = col("'>")
+  let vstart = virtcol("'<")
+  let vend = virtcol("'>")
 
   if vstart < vend
     return range(vstart, vend)
@@ -37,7 +37,7 @@ function! s:get_visual_range()
 endfunction
 
 function! s:get_one_range()
-  return [col('.')]
+  return [virtcol('.')]
 endfunction
 
 function! easy_colorcolumn#add(mode)
